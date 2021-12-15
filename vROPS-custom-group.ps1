@@ -140,6 +140,6 @@ $secBody = “{
 }
 }”
 write-host -ForegroundColor Yellow $secBody
-$secResponse = Invoke-RestMethod ‘https://vrops.lab.sentania.net/suite-api/api/resources/groups' -Method ‘POST’ -Headers $secHeaders -Body $secBody
+$secResponse = Invoke-RestMethod ‘https://####VROPS FQDN/suite-api/api/resources/groups' -Method ‘POST’ -Headers $secHeaders -Body $secBody
 
 }

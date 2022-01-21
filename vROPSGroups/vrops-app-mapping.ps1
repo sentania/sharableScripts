@@ -4,7 +4,7 @@ $portfolioApplicationMappings = import-csv .\portfolio-app-mapping.csv
 ###expected format: groupname, porfolioCode
 $vROPSFQDN = "vrops.lab.sentania.net"
 $vROPSuser = "admin"
-$vROPSpasswd = "***REMOVED***"
+$vROPSpasswd = "VMware1!"
 
 
 $applicationGroupTYpe = "(Custom) Application"

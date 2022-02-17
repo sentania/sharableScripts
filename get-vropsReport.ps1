@@ -11,6 +11,8 @@ add-type @"
 "@
 [System.Net.ServicePointManager]::CertificatePolicy = New-Object TrustAllCertsPolicy
 
+
+####vROPS API Documentation: https://vrops.lab.sentania.net/suite-api/doc/swagger-ui.html
 $vROPSFQDN = "vrops.lab.sentania.net"
 $vROPSuser = "admin"
 $vROPSpasswd = "VMware1!!"

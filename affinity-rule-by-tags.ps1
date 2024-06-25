@@ -1,12 +1,17 @@
-﻿
-$cred = Get-Credential
-$vcenterlist = "lab-comp01-vcenter.int.sentania.net"
-$tagcategories = "businessIntent"
+﻿param (
+    [Parameter(Mandatory=$true)][string[]]$vcenterlist,
+    [Parameter(Mandatory=$true)][string]$vCUsername,
+    [Parameter(Mandatory=$true)][string]$vcPassword,
+    [Parameter(Mandatory=$true)][string[]]$tagcategories
+)
+#$cred = Get-Credential
+#$vcenterlist = "lab-comp01-vcenter.int.sentania.net"
+#$tagcategories = "businessIntent"
 
 ###CYCLE THROUGH EACH vCENTER
 foreach ($vcenter in $vcenterlist)
 {
-  $vCConn = Connect-VIServer -Server $vcenter -Credential $cred
+  $vCConn = Connect-VIServer -Server $vcenter -User $vCUsername -Password $vcPassword
   Write-host "Processing DRS Rules via tags for: $vcenter..."
 
   ####CYCLE THROUGH EACH TAG CATEGORY
@@ -26,6 +31,8 @@ foreach ($vcenter in $vcenterlist)
        foreach ($cluster in $clusters)
        {
             Write-host "Processing Cluster: $cluster..."
+            
+
             #get all hosts that have this tag
             $vmhosts = $cluster | get-vmhost -Tag $tag
             $vms = $cluster | get-vm -Tag $tag
@@ -164,11 +171,3 @@ foreach ($vcenter in $vcenterlist)
 
   Disconnect-VIServer -Server $vCConn -Confirm:$false
  }
-
-
-
-
-
-
-
-

@@ -8,11 +8,11 @@
 
  # However creating custom group part was not working as expected. So I wrote new powershell script.
 
-  $Server = Connect-VIServer -Server â€œ####VCENTER SERVERâ€ -User â€œ#####USERNAMEâ€ -Password â€œ####PASSWORD#######!â€
+  $Server = Connect-VIServer -Server “####VCENTER SERVER” -User “#####USERNAME” -Password “####PASSWORD#######!”
 
   #Change Tag Category according to your needs.
 
-  $category = â€œprotectionâ€
+  $category = “protection”
 
   # Retrieve all tags of the category
 
@@ -34,7 +34,7 @@
 
     $tag = New-Object PSObject
 
-    #This one is important. Weâ€™ll use tag name while creating custom groups.
+    #This one is important. We’ll use tag name while creating custom groups.
 
     $tag | add-member -type NoteProperty -Name tagName -Value $item.Name
 
@@ -53,29 +53,29 @@
 
 #################################################################
 
-$firstHeaders = New-Object â€œSystem.Collections.Generic.Dictionary[[String],[String]]â€
+$firstHeaders = New-Object “System.Collections.Generic.Dictionary[[String],[String]]”
 
-$firstHeaders.Add(â€œContent-Typeâ€, â€œapplication/json; utf-8â€)
+$firstHeaders.Add(“Content-Type”, “application/json; utf-8”)
 
-$firstHeaders.Add(â€œAcceptâ€, â€œapplication/jsonâ€)
+$firstHeaders.Add(“Accept”, “application/json”)
 
 #Enter your username and password. I just tried with local user.
 
-$firstBody = â€œ{
+$firstBody = “{
 
-`n  `â€username`â€ : `â€####VROPS LOCAL USER`â€,
+`n  `”username`” : `”####VROPS LOCAL USER`”,
 
-`n  `â€password`â€ : `â€####VROPS PASSWORD!`â€,
+`n  `”password`” : `”####VROPS PASSWORD!`”,
 
-`n  `â€others`â€ : [ ],
+`n  `”others`” : [ ],
 
-`n  `â€otherAttributes`â€ : { }
+`n  `”otherAttributes`” : { }
 
-`n}â€
+`n}”
 
 #Enter your vROps IP or FQDN
 
-$firstResponse = Invoke-RestMethod â€˜https://vrops.lab.sentania.net/suite-api/api/auth/token/acquire' -Method â€˜POSTâ€™ -Headers $firstHeaders -Body $firstBody
+$firstResponse = Invoke-RestMethod ‘https://vrops.lab.sentania.net/suite-api/api/auth/token/acquire' -Method ‘POST’ -Headers $firstHeaders -Body $firstBody
 
 $firstResponse | ConvertTo-Json
 
@@ -91,14 +91,14 @@ $token = $firstResponse.token
 
 # $key is the Tag Category again.
 
-$key = â€œprotectionâ€
+$key = “protection”
 
-#Below for loop will create custom group for each tag name in tag category. For our example, it â€œEnvironmentâ€
+#Below for loop will create custom group for each tag name in tag category. For our example, it “Environment”
 
 foreach ($tag in $tags)
 {
 
-#Check 70th line. This will get tags step by step. And weâ€™ll use them in request body.
+#Check 70th line. This will get tags step by step. And we’ll use them in request body.
 
 #Check 80th line. Tag Name will be group Name.
 
@@ -108,15 +108,15 @@ foreach ($tag in $tags)
 
 $tagName = $tag.tagName
 
-$secHeaders = New-Object â€œSystem.Collections.Generic.Dictionary[[String],[String]]â€
+$secHeaders = New-Object “System.Collections.Generic.Dictionary[[String],[String]]”
 
-$secHeaders.Add(â€œContent-Typeâ€, â€œapplication/json; utf-8â€)
+$secHeaders.Add(“Content-Type”, “application/json; utf-8”)
 
-$secHeaders.Add(â€œAcceptâ€, â€œapplication/jsonâ€)
+$secHeaders.Add(“Accept”, “application/json”)
 
-$secHeaders.Add(â€œAuthorizationâ€, â€œvRealizeOpsToken $tokenâ€)
+$secHeaders.Add(“Authorization”, “vRealizeOpsToken $token”)
 
-$secBody = â€œ{
+$secBody = “{
  ""resourceKey"": {
         ""name`": ""$category-$tagName"",
         ""adapterKindKey"": ""Container"",
@@ -138,8 +138,8 @@ $secBody = â€œ{
         ]
 }]
 }
-}â€
+}”
 write-host -ForegroundColor Yellow $secBody
-$secResponse = Invoke-RestMethod â€˜https://####VROPS FQDN/suite-api/api/resources/groups' -Method â€˜POSTâ€™ -Headers $secHeaders -Body $secBody
+$secResponse = Invoke-RestMethod ‘https://####VROPS FQDN/suite-api/api/resources/groups' -Method ‘POST’ -Headers $secHeaders -Body $secBody
 
 }

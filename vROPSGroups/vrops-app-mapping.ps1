@@ -4,13 +4,13 @@ $portfolioApplicationMappings = import-csv .\portfolio-app-mapping.csv
 ###expected format: groupname, porfolioCode
 $vROPSFQDN = "vrops.lab.sentania.net"
 $vROPSuser = "admin"
-$vROPSpasswd = "VMware1!"
+$vROPSpasswd = "p0w3R2win!"
 
 
 $applicationGroupTYpe = "(Custom) Application"
 $portfolioGroupType = "(Custom) Porfolio"
 
-#REGION AUTHENTICATE TO vROPS
+#region AUTHENTICATE TO vROPS
 $firstHeaders = New-Object “System.Collections.Generic.Dictionary[[String],[String]]”
 
 $firstHeaders.Add(“Content-Type”, “application/json; utf-8”)
@@ -41,16 +41,35 @@ $secHeaders.Add(“Content-Type”, “application/json; utf-8”)
 $secHeaders.Add(“Accept”, “application/json”)
 $secHeaders.Add(“Authorization”, “vRealizeOpsToken $token”)
 
-#ENDREGION
+#endregion
 
+#region Pull list of all existing groups
+$groupList = Invoke-RestMethod "https://$vROPSFQDN/suite-api/api/resources/groups" -Method 'GET' -Headers $secHeaders
+$groupListjson = $grouplist.groups | convertto-json -Depth 99
+
+$groupobjectList = $groupListjson | ConvertFrom-Json
+
+#endregion
 #for each application in our input file we will create a group of the
-
 foreach ($applicationTag in $applicationTags)
 {
 $groupName = $applicationTag.groupname
 $grouptag = $applicationTag.grouptag
 $groupcategory =  $applicationtag.grouptagcatagory
 
+foreach ($groupobject in $groupobjectList)
+{
+    $present = $FALSE
+    if ($groupname -eq $groupobject.resourceKey.name)
+    {
+        $present = $TRUE
+    }
+    Write-host $present
+}
+
+#if the group exists - don't create it
+if ($present -eq $FALSE)
+{
 $secBody = “{
  ""resourceKey"": {
         ""name`": ""$groupName"",

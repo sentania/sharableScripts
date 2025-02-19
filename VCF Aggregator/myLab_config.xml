@@ -1,0 +1,528 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AdapterKinds>
+    <AdapterKind adapterKindKey="VMWARE">
+        <ResourceKind resourceKindKey="vSphere World">
+            <Metric attrkey="summary|total_number_datastores" label="" unit="" yellow="" orange="" red=""/>
+            <Metric attrkey="summary|total_number_hosts" label="" unit="" yellow="" orange="" red=""/>
+            <Metric attrkey="summary|total_number_vms" label="" unit="" yellow="" orange="" red=""/>
+            <Metric attrkey="summary|total_number_datacenters" label="" unit="" yellow="" orange="" red=""/>
+            <Metric attrkey="summary|total_number_clusters" label="" unit="" yellow="" orange="" red=""/>
+            <Metric attrkey="summary|number_running_vms" label="" unit="" yellow="" orange="" red=""/>
+            <Metric attrkey="summary|number_running_hosts" label="" unit="" yellow="" orange="" red=""/>
+            <Metric attrkey="summary|number_poweredOff_vms" label="" unit="" yellow="" orange="" red=""/>
+            <Metric attrkey="summary|number_running_vcpus" label="" unit="" yellow="" orange="" red=""/>
+            <Metric attrkey="cpu|corecount_provisioned" label="CPU Core" unit="" yellow="" orange="" red=""/>
+            <Metric attrkey="cpu|capacity_provisioned" label="" unit="" yellow="" orange="" red=""/>
+            <Metric attrkey="mem|host_provisioned" label="" unit="y" yellow="" orange="" red=""/>
+            <Metric attrkey="diskspace|total_capacity" label="" unit="" yellow="" orange="" red=""/>
+        </ResourceKind>
+        <ResourceKind resourceKindKey="VMwareAdapter Instance">
+            <Metric attrkey="badge|health" label="" unit="" yellow="" orange="" red=""/>
+            <Metric attrkey="summary|total_number_vms" label="" unit="" yellow="" orange="" red=""/>
+            <Metric attrkey="summary|total_number_hosts" label="" unit="" yellow="" orange="" red=""/>
+            <Metric attrkey="summary|total_number_datastores" label="" unit="" yellow="" orange="" red=""/>
+            <Metric attrkey="summary|total_number_datacenters" label="" unit="" yellow="" orange="" red=""/>
+            <Metric attrkey="summary|total_number_clusters" label="" unit="" yellow="" orange="" red=""/>
+            <Metric attrkey="summary|number_poweredOff_vms" label="" unit="" yellow="" orange="" red=""/>
+            <Metric attrkey="summary|number_running_hosts" label="" unit="" yellow="" orange="" red=""/>
+            <Metric attrkey="summary|number_running_vms" label="" unit="" yellow="" orange="" red=""/>
+            <Metric attrkey="cpu|capacityRemaining" label="" unit="" yellow="" orange="" red=""/>
+            <Metric attrkey="cpu|demandPct" label="" unit="" yellow="" orange="" red=""/>
+            <Metric attrkey="diskspace|total_capacity" label="" unit="" yellow="" orange="" red=""/>
+            <Metric attrkey="diskspace|total_usage" label="" unit="" yellow="" orange="" red=""/>
+            <Metric attrkey="mem|capacityRemaining" label="" unit="" yellow="" orange="" red=""/>
+            <Metric attrkey="diskspace|capacityRemaining" label="" unit="" yellow="" orange="" red=""/>
+            <Metric attrkey="mem|host_provisioned" label="" unit="" yellow="" orange="" red=""/>
+            <Metric attrkey="mem|workload" label="" unit="" yellow="" orange="" red=""/>
+            <Metric attrkey="mem|host_usagePct" label="" unit="" yellow="" orange="" red=""/>
+            <Metric attrkey="System Attributes|alert_count_critical" label="" unit="" yellow="" orange="" red=""/>
+            <Metric attrkey="System Attributes|alert_count_immediate" label="" unit="" yellow="" orange="" red=""/>
+            <Metric attrkey="System Attributes|alert_count_warning" label="" unit="" yellow="" orange="" red=""/>
+            <Metric attrkey="System Attributes|self_alert_count" label="" unit="" yellow="" orange="" red=""/>
+            <Property attrkey="summary|vcfullname" label="" unit="" yellow="" orange="" red=""/>
+            <Property attrkey="summary|version" label="" unit="" yellow="" orange="" red=""/>
+                    </ResourceKind>
+                    <ResourceKind resourceKindKey="Datacenter">
+                        <Metric attrkey="reclaimable|cpu" label="" unit="" yellow="" orange="" red=""/>
+                        <Metric attrkey="reclaimable|diskspace" label="" unit="" yellow="" orange="" red=""/>
+                        <Metric attrkey="reclaimable|mem" label="" unit="" yellow="" orange="" red=""/>
+                        <Metric attrkey="System Attributes|self_alert_count" label="" unit="" yellow="" orange="" red=""/>
+                    </ResourceKind>
+                    <ResourceKind resourceKindKey="ClusterComputeResource">
+                        <Metric attrkey="OnlineCapacityAnalytics|cpu|demand|capacityRemaining" label="" unit="" yellow="" orange="" red=""/>
+                        <Metric attrkey="OnlineCapacityAnalytics|mem|demand|capacityRemaining" label="" unit="" yellow="" orange="" red=""/>
+                        <Metric attrkey="OnlineCapacityAnalytics|diskspace|demand|capacityRemaining" label="" unit="" yellow="" orange="" red=""/>
+                        <Metric attrkey="OnlineCapacityAnalytics|capacityRemainingPercentage" label="" unit="" yellow="" orange="" red=""/>
+                        <Metric attrkey="OnlineCapacityAnalytics|timeRemaining" label="" unit="" yellow="" orange="" red=""/>
+                        <Metric attrkey="summary|total_number_vms" label="" unit="" yellow="" orange="" red=""/>
+                        <Metric attrkey="summary|number_running_vms" label="" unit="" yellow="" orange="" red=""/>
+                        <Metric attrkey="summary|total_number_hosts" label="" unit="" yellow="" orange="" red=""/>
+                        <Metric attrkey="summary|number_running_hosts" label="" unit="" yellow="" orange="" red=""/>
+                        <Metric attrkey="summary|total_number_datastores" label="" unit="" yellow="" orange="" red=""/>
+                        <Metric attrkey="cpu|haTotalCapacity_average" label="" unit="" yellow="" orange="" red=""/>
+                        <Metric attrkey="cpu|usagemhz_average" label="" unit="" yellow="" orange="" red=""/>
+                        <Metric attrkey="cpu|demandPct" label="" unit="" yellow="" orange="" red=""/>
+                        <Metric attrkey="cpu|capacity_contentionPct" label="" unit="" yellow="" orange="" red=""/>
+                        <Metric attrkey="cpu|capacity_provisioned" label="" unit="" yellow="" orange="" red=""/>
+                        <Metric attrkey="mem|host_provisioned" label="" unit="" yellow="" orange="" red=""/>
+                        <Metric attrkey="mem|host_usage" label="" unit="" yellow="" orange="" red=""/>
+                        <Metric attrkey="mem|reservedCapacity_average" label="" unit="" yellow="" orange="" red=""/>
+                        <Metric attrkey="mem|host_contentionPct" label="" unit="" yellow="" orange="" red=""/>
+                        <Metric attrkey="mem|usage_average" label="" unit="" yellow="" orange="" red=""/>
+                        <Metric attrkey="mem|haTotalCapacity_average" label="" unit="" yellow="" orange="" red="" link=""/>
+                        <Metric attrkey="diskspace|total_capacity" label="" unit="" yellow="" orange="" red=""/>
+                        <Metric attrkey="diskspace|total_provisioned" label="" unit="" yellow="" orange="" red=""/>
+                        <Metric attrkey="diskspace|total_usage" label="" unit="" yellow="" orange="" red=""/>
+                        <Metric attrkey="diskspace|snapshot" label="" unit="" yellow="" orange="" red=""/>
+                        <Metric attrkey="badge|health" label="" unit="" yellow="" orange="" red=""/>
+                        <Metric attrkey="System Attributes|self_alert_count" label="" unit="" yellow="" orange="" red=""/>
+            <Property attrkey="configuration|dasConfig|admissionControlEnabled" label="" unit="" yellow="" orange="" red=""/>
+            <Property attrkey="configuration|dasConfig|enabled" label="" unit="" yellow="" orange="" red=""/>
+            <Property attrkey="configuration|drsconfig|enabled" label="" unit="" yellow="" orange="" red=""/>
+            <Property attrkey="configuration|drsconfig|defaultVmBehavior" label="" unit="" yellow="" orange="" red=""/>
+            <Property attrkey="configuration|drsconfig|vmotionRate" label="" unit="" yellow="" orange="" red=""/>
+            <Property attrkey="configuration|dpmConfiginfo|enabled" label="" unit="" yellow="" orange="" red=""/>
+            <Property attrkey="configuration|dpmConfiginfo|enabled" label="" unit="" yellow="" orange="" red=""/>
+            <Property attrkey="summary|parentVcenter" label="" unit="" yellow="" orange="" red=""/>
+            <Property attrkey="summary|parentDatacenter" label="" unit="" yellow="" orange="" red=""/>
+            <Property attrkey="summary|tagJson" label="" unit="" yellow="" orange="" red=""/>
+        </ResourceKind>
+        <ResourceKind resourceKindKey="HostSystem">
+            <Metric attrkey="System Attributes|self_alert_count" label="" unit="" yellow="" orange="" red=""/>
+            <Metric attrkey="sys|vmotionEnabled" label="" unit="" yellow="" orange="" red=""/>
+            <Metric attrkey="cpu|totalCapacity_average" label="" unit="" yellow="" orange="" red="" link=""/>
+            <Property attrkey="hardware|vendorModel" label="" unit="" yellow="" orange="" red=""/>
+            <Property attrkey="hardware|biosVersion" label="" unit="" yellow="" orange="" red=""/>
+            <Property attrkey="hardware|serviceTag" label="" unit="" yellow="" orange="" red=""/>
+            <Property attrkey="hardware|cpuInfo|numCpuCores" label="" unit="" yellow="" orange="" red=""/>
+            <Property attrkey="hardware|cpuInfo|numCpuPackages" label="" unit="" yellow="" orange="" red=""/>
+            <Property attrkey="hardware|powerManagementPolicy" label="" unit="" yellow="" orange="" red=""/>
+            <Property attrkey="hardware|powerManagementTechnoloy" label="" unit="" yellow="" orange="" red=""/>
+            <Property attrkey="cpu|cpuModel" label="" unit="" yellow="" orange="" red=""/>
+            <Property attrkey="config|hyperThread|active" label="" unit="" yellow="" orange="" red=""/>
+            <Property attrkey="config|network|nnic" label="" unit="" yellow="" orange="" red=""/>
+            <Property attrkey="config|storageDevice|plugStoreTopology|numberofPath" label="" unit="" yellow="" orange="" red=""/>
+            <Property attrkey="config|storageDevice|multipathInfo|numberofActivePath" label="" unit="" yellow="" orange="" red=""/>
+            <Property attrkey="net|mgmt_address" label="" unit="" yellow="" orange="" red=""/>
+            <Property attrkey="runtime|connectionState" label="" unit="" yellow="" orange="" red=""/>
+            <Property attrkey="runtime|maintenanceState" label="" unit="" yellow="" orange="" red=""/>
+            <Property attrkey="runtime|powerState" label="" unit="" yellow="" orange="" red=""/>
+            <Property attrkey="summary|folder" label="" unit="" yellow="" orange="" red=""/>
+            <Property attrkey="summary|tag" label="" unit="" yellow="" orange="" red=""/>
+            <Property attrkey="summary|parentDatacenter" label="" unit="" yellow="" orange="" red=""/>
+            <Property attrkey="summary|parentVcenter" label="" unit="" yellow="" orange="" red=""/>
+            <Property attrkey="summary|version" label="" unit="" yellow="" orange="" red=""/>
+        </ResourceKind>
+        <ResourceKind resourceKindKey="Datastore">
+            <Metric attrkey="System Attributes|self_alert_count" label="" unit="" yellow="" orange="" red=""/>
+        </ResourceKind>
+        <ResourceKind resourceKindKey="VmwareDistributedVirtualSwitch">
+        </ResourceKind>
+        <ResourceKind resourceKindKey="VirtualMachine">
+            <Metric attrkey="Cost|Monthly Projected Total Cost (US$/Month)" label="" unit="" yellow="" orange="" red=""/>
+            <Metric attrkey="CPU|Usage (%)" label="" unit="" yellow="" orange="" red=""/>
+            <Property attrkey="summary|moid" label="" unit="" yellow="" orange="" red=""/>
+            <Property attrkey="summary|vSphere Tag" label="" unit="" yellow="" orange="" red=""/>
+        </ResourceKind>
+    </AdapterKind>
+    <AdapterKind adapterKindKey="vCenter Operations Adapter">
+        <ResourceKind resourceKindKey="vC-Ops-Node">
+            <Metric attrkey="badge|health" label="" unit="" yellow="" orange="" red=""/>
+            <Metric attrkey="cpu|allCpuCombined_percent" label="" unit="" yellow="" orange="" red=""/>
+            <Metric attrkey="mem|used" label="" unit="" yellow="" orange="" red=""/>
+            <Metric attrkey="swap|used" label="" unit="" yellow="" orange="" red=""/>
+            <Metric attrkey="PercentDBStorageAvailable" label="" unit="" yellow="" orange="" red=""/>
+            <Metric attrkey="device|iops_read" label="" unit="" yellow="" orange="" red=""/>
+            <Metric attrkey="device|iops_write" label="" unit="" yellow="" orange="" red=""/>
+            <Metric attrkey="net|allInboundTotal" label="" unit="" yellow="" orange="" red=""/>
+            <Metric attrkey="net|allOutboundTotal" label="" unit="" yellow="" orange="" red=""/>
+            <Metric attrkey="ComponentCount" label="" unit="" yellow="" orange="" red=""/>
+            <Metric attrkey="System Attributes|total_alert_count" label="" unit="" yellow="" orange="" red=""/>
+        </ResourceKind>
+        <ResourceKind resourceKindKey="vC-Ops-Analytics">
+            <Metric attrkey="badge|health" label="" unit="" yellow="" orange="" red=""/>
+            <Metric attrkey="PrimaryResourcesCount" label="" unit="" yellow="" orange="" red=""/>
+            <Metric attrkey="PrimaryMetricsCount" label="" unit="" yellow="" orange="" red=""/>
+            <Metric attrkey="LocalPrimaryFDSize" label="" unit="" yellow="" orange="" red=""/>
+            <Metric attrkey="OverallThresholdChecking|CheckThresholdAndHealth|Duration|MaxDuration" label="" unit="" yellow="" orange="" red=""/>
+            <Metric attrkey="CPUUsage" label="" unit="" yellow="" orange="" red=""/>
+            <Metric attrkey="CurrentHeapSize" label="" unit="" yellow="" orange="" red=""/>
+            <Metric attrkey="Threads" label="" unit="" yellow="" orange="" red=""/>
+            <Metric attrkey="System Attributes|total_alert_count" label="" unit="" yellow="" orange="" red=""/>
+        </ResourceKind>
+        <ResourceKind resourceKindKey="vC-Ops-Collector">
+            <Metric attrkey="badge|health" label="" unit="" yellow="" orange="" red=""/>
+            <Metric attrkey="SentFDCount" label="" unit="" yellow="" orange="" red=""/>
+            <Metric attrkey="SentMetricCount" label="" unit="" yellow="" orange="" red=""/>
+            <Metric attrkey="CPUUsage" label="" unit="" yellow="" orange="" red=""/>
+            <Metric attrkey="CurrentHeapSize" label="" unit="" yellow="" orange="" red=""/>
+            <Metric attrkey="Threads" label="" unit="" yellow="" orange="" red=""/>
+            <Metric attrkey="System Attributes|total_alert_count" label="" unit="" yellow="" orange="" red=""/>
+        </ResourceKind>
+        <ResourceKind resourceKindKey="vC-Ops-Product-UI">
+            <Metric attrkey="badge|health" label="" unit="" yellow="" orange="" red=""/>
+            <Metric attrkey="ActiveSessionsCount" label="" unit="" yellow="" orange="" red=""/>
+            <Metric attrkey="APICalls|FailedAuthenticationCount" label="" unit="" yellow="" orange="" red=""/>
+            <Metric attrkey="CurrentHeapSize" label="" unit="" yellow="" orange="" red=""/>
+            <Metric attrkey="Threads" label="" unit="" yellow="" orange="" red=""/>
+            <Metric attrkey="CPUUsage" label="" unit="" yellow="" orange="" red=""/>
+            <Metric attrkey="System Attributes|total_alert_count" label="" unit="" yellow="" orange="" red=""/>
+        </ResourceKind>
+        <ResourceKind resourceKindKey="vC-Ops-Cluster">
+            <Metric attrkey="badge|health" label="" unit="" yellow="" orange="" red=""/>
+            <Metric attrkey="PrimaryResourcesCount" label="" unit="" yellow="" orange="" red=""/>
+            <Metric attrkey="PrimaryMetricsCount" label="" unit="" yellow="" orange="" red=""/>
+            <Metric attrkey="cc|progress" label="" unit="" yellow="" orange="" red=""/>
+            <Metric attrkey="dt|percentage" label="" unit="" yellow="" orange="" red=""/>
+            <Metric attrkey="UI|TotalSessionCount" label="" unit="" yellow="" orange="" red=""/>
+            <Metric attrkey="ActiveAlarms" label="" unit="" yellow="" orange="" red=""/>
+            <Metric attrkey="ActiveAlerts" label="" unit="" yellow="" orange="" red=""/>
+            <Metric attrkey="LocalPrimaryFDSize" label="" unit="" yellow="" orange="" red=""/>
+            <Metric attrkey="System Attributes|total_alert_count" label="" unit="" yellow="" orange="" red=""/>
+        </ResourceKind>
+        <ResourceKind resourceKindKey="vC-Ops-Admin-UI">
+            <Metric attrkey="badge|health" label="" unit="" yellow="" orange="" red=""/>
+            <Metric attrkey="System Attributes|total_alert_count" label="" unit="" yellow="" orange="" red=""/>
+        </ResourceKind>
+        <ResourceKind resourceKindKey="vC-Ops-Watchdog">
+            <Metric attrkey="badge|health" label="" unit="" yellow="" orange="" red=""/>
+            <Metric attrkey="System Attributes|total_alert_count" label="" unit="" yellow="" orange="" red=""/>
+        </ResourceKind>
+        <ResourceKind resourceKindKey="vC-Ops-CaSA">
+            <Metric attrkey="badge|health" label="" unit="" yellow="" orange="" red=""/>
+            <Metric attrkey="CurrentHeapSize" label="" unit="" yellow="" orange="" red=""/>
+            <Metric attrkey="Threads" label="" unit="" yellow="" orange="" red=""/>
+            <Metric attrkey="CPUUsage" label="" unit="" yellow="" orange="" red=""/>
+            <Metric attrkey="System Attributes|total_alert_count" label="" unit="" yellow="" orange="" red=""/>
+        </ResourceKind>
+        <ResourceKind resourceKindKey="vC-Ops-Controller">
+            <Metric attrkey="badge|health" label="" unit="" yellow="" orange="" red=""/>
+            <Metric attrkey="Tasks|TasksSent" label="" unit="" yellow="" orange="" red=""/>
+            <Metric attrkey="Tasks|TasksRecieved" label="" unit="" yellow="" orange="" red=""/>
+            <Metric attrkey="System Attributes|total_alert_count" label="" unit="" yellow="" orange="" red=""/>
+        </ResourceKind>
+        <ResourceKind resourceKindKey="vC-Ops-Fsdb">
+            <Metric attrkey="badge|health" label="" unit="" yellow="" orange="" red=""/>
+            <Metric attrkey="StoragePoolElementsCount" label="" unit="" yellow="" orange="" red=""/>
+            <Metric attrkey="StorageThreadPool|Duration|TotalDuration" label="" unit="" yellow="" orange="" red=""/>
+            <Metric attrkey="System Attributes|total_alert_count" label="" unit="" yellow="" orange="" red=""/>
+        </ResourceKind>
+        <ResourceKind resourceKindKey="vC-Ops-Persistence">
+            <Metric attrkey="badge|health" label="" unit="" yellow="" orange="" red=""/>
+            <Metric attrkey="AlarmSQL|MaxQueryDuration" label="" unit="" yellow="" orange="" red=""/>
+            <Metric attrkey="CassandraDB|CPUUsage" label="" unit="" yellow="" orange="" red=""/>
+            <Metric attrkey="CassandraDB|CurrentHeapSize" label="" unit="" yellow="" orange="" red=""/>
+            <Metric attrkey="CassandraDB|ThreadCount" label="" unit="" yellow="" orange="" red=""/>
+            <Metric attrkey="CassandraDB|Keyspace:globalpersistence|ReadCountDelta" label="" unit="" yellow="" orange="" red=""/>
+            <Metric attrkey="CassandraDB|Keyspace:globalpersistence|WriteCountDelta" label="" unit="" yellow="" orange="" red=""/>
+            <Metric attrkey="System Attributes|total_alert_count" label="" unit="" yellow="" orange="" red=""/>
+        </ResourceKind>
+        <ResourceKind resourceKindKey="vC-Ops-Remote-Collector">
+            <Metric attrkey="badge|health" label="" unit="" yellow="" orange="" red=""/>
+            <Metric attrkey="System Attributes|total_alert_count" label="" unit="" yellow="" orange="" red=""/>
+            <Metric attrkey="cpu|allCpuCombined_percent" label="" unit="" yellow="" orange="" red=""/>
+            <Metric attrkey="mem|used" label="" unit="" yellow="" orange="" red=""/>
+            <Metric attrkey="swap|used" label="" unit="" yellow="" orange="" red=""/>
+        </ResourceKind>
+        <ResourceKind resourceKindKey="vC-Ops-Suite-API">
+            <Metric attrkey="badge|health" label="" unit="" yellow="" orange="" red=""/>
+            <Metric attrkey="CurrentHeapSize" label="" unit="" yellow="" orange="" red=""/>
+            <Metric attrkey="Threads" label="" unit="" yellow="" orange="" red=""/>
+            <Metric attrkey="CPUUsage" label="" unit="" yellow="" orange="" red=""/>
+            <Metric attrkey="System Attributes|total_alert_count" label="" unit="" yellow="" orange="" red=""/>
+        </ResourceKind>
+    </AdapterKind>
+    <AdapterKind adapterKindKey="VirtualAndPhysicalSANAdapter">
+        <ResourceKind resourceKindKey="VirtualSANDCCluster">
+            <Metric attrkey="System Attributes|total_alert_count" label="" unit="" yellow="" orange="" red=""/>
+        </ResourceKind>
+    </AdapterKind>
+    <AdapterKind adapterKindKey="SrmAdapter">
+        <ResourceKind resourceKindKey="Recovery Plans">
+            <Metric attrkey="System Attributes|total_alert_count" label="" unit="" yellow="" orange="" red=""/>
+        </ResourceKind>
+        <ResourceKind resourceKindKey="Protection Groups">
+            <Metric attrkey="System Attributes|total_alert_count" label="" unit="" yellow="" orange="" red=""/>
+        </ResourceKind>
+    </AdapterKind>
+    <AdapterKind adapterKindKey="EP Ops Adapter">
+        <ResourceKind resourceKindKey="IIS AppHostSvc">
+            <Metric attrkey="System Attributes|total_alert_count" label="" unit="" yellow="" orange="" red=""/>
+        </ResourceKind>
+        <ResourceKind resourceKindKey="vRealize Automation DEM Orchestrator">
+            <Metric attrkey="System Attributes|total_alert_count" label="" unit="" yellow="" orange="" red=""/>
+        </ResourceKind>
+        <ResourceKind resourceKindKey="vRealize Automation Database (Group)">
+            <Metric attrkey="System Attributes|total_alert_count" label="" unit="" yellow="" orange="" red=""/>
+        </ResourceKind>
+        <ResourceKind resourceKindKey="vRealize Automation Application">
+            <Metric attrkey="badge|health" label="" unit="" yellow="" orange="" red=""/>
+            <Metric attrkey="System Attributes|total_alert_count" label="" unit="" yellow="" orange="" red=""/>
+        </ResourceKind>
+        <ResourceKind resourceKindKey="MSSQL">
+            <Metric attrkey="System Attributes|total_alert_count" label="" unit="" yellow="" orange="" red=""/>
+        </ResourceKind>
+        <ResourceKind resourceKindKey="vRealize Automation Server (Group)">
+            <Metric attrkey="System Attributes|total_alert_count" label="" unit="" yellow="" orange="" red=""/>
+        </ResourceKind>
+        <ResourceKind resourceKindKey="IIS WWW Service">
+            <Metric attrkey="System Attributes|total_alert_count" label="" unit="" yellow="" orange="" red=""/>
+        </ResourceKind>
+        <ResourceKind resourceKindKey="vRealize Automation IaaS Repository">
+            <Metric attrkey="System Attributes|total_alert_count" label="" unit="" yellow="" orange="" red=""/>
+        </ResourceKind>
+        <ResourceKind resourceKindKey="vRealize Automation Manager Server (Group)">
+            <Metric attrkey="System Attributes|total_alert_count" label="" unit="" yellow="" orange="" red=""/>
+        </ResourceKind>
+        <ResourceKind resourceKindKey="vRealize Business (Group)">
+            <Metric attrkey="System Attributes|total_alert_count" label="" unit="" yellow="" orange="" red=""/>
+        </ResourceKind>
+        <ResourceKind resourceKindKey="vSphere SSO">
+            <Metric attrkey="System Attributes|total_alert_count" label="" unit="" yellow="" orange="" red=""/>
+        </ResourceKind>
+        <ResourceKind resourceKindKey="vRealize Automation IaaS Web (Group)">
+            <Metric attrkey="System Attributes|total_alert_count" label="" unit="" yellow="" orange="" red=""/>
+        </ResourceKind>
+        <ResourceKind resourceKindKey="vRealize Business Standard Server">
+            <Metric attrkey="System Attributes|total_alert_count" label="" unit="" yellow="" orange="" red=""/>
+        </ResourceKind>
+        <ResourceKind resourceKindKey="vRealize Automation IaaS Web Load Balancer">
+            <Metric attrkey="System Attributes|total_alert_count" label="" unit="" yellow="" orange="" red=""/>
+        </ResourceKind>
+        <ResourceKind resourceKindKey="ASP.NET">
+            <Metric attrkey="System Attributes|total_alert_count" label="" unit="" yellow="" orange="" red=""/>
+        </ResourceKind>
+        <ResourceKind resourceKindKey="IIS WAS Service">
+            <Metric attrkey="System Attributes|total_alert_count" label="" unit="" yellow="" orange="" red=""/>
+        </ResourceKind>
+        <ResourceKind resourceKindKey="vRealize Business Standard Data Collector">
+            <Metric attrkey="System Attributes|total_alert_count" label="" unit="" yellow="" orange="" red=""/>
+        </ResourceKind>
+        <ResourceKind resourceKindKey="vRealize Automation IaaS Web Relationship discovery service">
+            <Metric attrkey="System Attributes|total_alert_count" label="" unit="" yellow="" orange="" red=""/>
+        </ResourceKind>
+        <ResourceKind resourceKindKey="vRealize Automation Application Services (Group)">
+            <Metric attrkey="System Attributes|total_alert_count" label="" unit="" yellow="" orange="" red=""/>
+        </ResourceKind>
+        <ResourceKind resourceKindKey="vRealize Orchestrator (Group)">
+            <Metric attrkey="System Attributes|total_alert_count" label="" unit="" yellow="" orange="" red=""/>
+        </ResourceKind>
+        <ResourceKind resourceKindKey="vRealize Automation Server">
+            <Metric attrkey="System Attributes|total_alert_count" label="" unit="" yellow="" orange="" red=""/>
+        </ResourceKind>
+        <ResourceKind resourceKindKey="vRealize Automation Proxy Agent (Group)">
+            <Metric attrkey="System Attributes|total_alert_count" label="" unit="" yellow="" orange="" red=""/>
+        </ResourceKind>
+        <ResourceKind resourceKindKey="vRealize Automation Proxy Agent">
+            <Metric attrkey="System Attributes|total_alert_count" label="" unit="" yellow="" orange="" red=""/>
+        </ResourceKind>
+        <ResourceKind resourceKindKey="vRealize Automation IaaS Management Agent">
+            <Metric attrkey="System Attributes|total_alert_count" label="" unit="" yellow="" orange="" red=""/>
+        </ResourceKind>
+        <ResourceKind resourceKindKey="vSphere SSO (Group)">
+            <Metric attrkey="System Attributes|total_alert_count" label="" unit="" yellow="" orange="" red=""/>
+        </ResourceKind>
+        <ResourceKind resourceKindKey="vRealize Automation Application Services">
+            <Metric attrkey="System Attributes|total_alert_count" label="" unit="" yellow="" orange="" red=""/>
+        </ResourceKind>
+        <ResourceKind resourceKindKey="vRealize Automation Manager Server">
+            <Metric attrkey="System Attributes|total_alert_count" label="" unit="" yellow="" orange="" red=""/>
+        </ResourceKind>
+        <ResourceKind resourceKindKey="vRealize Automation IaaS Web">
+            <Metric attrkey="System Attributes|total_alert_count" label="" unit="" yellow="" orange="" red=""/>
+        </ResourceKind>
+        <ResourceKind resourceKindKey="vRealize Automation Manager Server Load Balancer">
+            <Metric attrkey="System Attributes|total_alert_count" label="" unit="" yellow="" orange="" red=""/>
+        </ResourceKind>
+        <ResourceKind resourceKindKey="VMware Identity Manager">
+            <Metric attrkey="System Attributes|total_alert_count" label="" unit="" yellow="" orange="" red=""/>
+        </ResourceKind>
+        <ResourceKind resourceKindKey="vRealize Automation DEM Worker">
+            <Metric attrkey="System Attributes|total_alert_count" label="" unit="" yellow="" orange="" red=""/>
+        </ResourceKind>
+        <ResourceKind resourceKindKey="vRealize Automation DEM (Group)">
+            <Metric attrkey="System Attributes|total_alert_count" label="" unit="" yellow="" orange="" red=""/>
+        </ResourceKind>
+        <ResourceKind resourceKindKey="PostgreSQL">
+            <Metric attrkey="System Attributes|total_alert_count" label="" unit="" yellow="" orange="" red=""/>
+        </ResourceKind>
+        <ResourceKind resourceKindKey="vRealize Automation Server Load Balancer">
+            <Metric attrkey="System Attributes|total_alert_count" label="" unit="" yellow="" orange="" red=""/>
+        </ResourceKind>
+    </AdapterKind>
+    <AdapterKind adapterKindKey="SDDCHealthAdapter">
+        <ResourceKind resourceKindKey="SDDC Health World">
+            <Metric attrkey="System Attributes|total_alert_count" label="" unit="" yellow="" orange="" red=""/>
+        </ResourceKind>
+        <ResourceKind resourceKindKey="SDDCHealth Instance">
+            <Metric attrkey="System Attributes|total_alert_count" label="" unit="" yellow="" orange="" red=""/>
+        </ResourceKind>
+        <ResourceKind resourceKindKey="SDDC World">
+            <Metric attrkey="System Attributes|alert_count_critical" label="" unit="" yellow="" orange="" red=""/>
+            <Metric attrkey="System Attributes|alert_count_immediate" label="" unit="" yellow="" orange="" red=""/>
+            <Metric attrkey="System Attributes|alert_count_warning" label="" unit="" yellow="" orange="" red=""/>
+            <Metric attrkey="System Attributes|alert_count_info" label="" unit="" yellow="" orange="" red=""/>
+            <Metric attrkey="System Attributes|total_alert_count" label="" unit="" yellow="" orange="" red=""/>
+        </ResourceKind>
+        <ResourceKind resourceKindKey="SDDC VROPS World">
+            <Metric attrkey="System Attributes|total_alert_count" label="" unit="" yellow="" orange="" red=""/>
+        </ResourceKind>
+        <ResourceKind resourceKindKey="SDDC VCENTER World">
+            <Metric attrkey="System Attributes|total_alert_count" label="" unit="" yellow="" orange="" red=""/>
+        </ResourceKind>
+        <ResourceKind resourceKindKey="SDDC VSAN World">
+            <Metric attrkey="System Attributes|total_alert_count" label="" unit="" yellow="" orange="" red=""/>
+        </ResourceKind>
+        <ResourceKind resourceKindKey="SDDC VRA World">
+            <Metric attrkey="System Attributes|total_alert_count" label="" unit="" yellow="" orange="" red=""/>
+        </ResourceKind>
+        <ResourceKind resourceKindKey="SDDC NSX World">
+            <Metric attrkey="System Attributes|total_alert_count" label="" unit="" yellow="" orange="" red=""/>
+        </ResourceKind>
+        <ResourceKind resourceKindKey="SDDC LOGINSIGHT World">
+            <Metric attrkey="System Attributes|total_alert_count" label="" unit="" yellow="" orange="" red=""/>
+        </ResourceKind>
+        <ResourceKind resourceKindKey="SDDC VRB World">
+            <Metric attrkey="System Attributes|total_alert_count" label="" unit="" yellow="" orange="" red=""/>
+        </ResourceKind>
+        <ResourceKind resourceKindKey="SDDC SRM World">
+            <Metric attrkey="System Attributes|total_alert_count" label="" unit="" yellow="" orange="" red=""/>
+        </ResourceKind>
+        <ResourceKind resourceKindKey="NSX">
+            <Metric attrkey="badge|health" label="" unit="" yellow="" orange="" red=""/>
+            <Metric attrkey="System Attributes|total_alert_count" label="" unit="" yellow="" orange="" red=""/>
+        </ResourceKind>
+        <ResourceKind resourceKindKey="NSXManager">
+            <Metric attrkey="System Attributes|total_alert_count" label="" unit="" yellow="" orange="" red=""/>
+        </ResourceKind>
+        <ResourceKind resourceKindKey="NSXController">
+            <Metric attrkey="System Attributes|total_alert_count" label="" unit="" yellow="" orange="" red=""/>
+        </ResourceKind>
+        <ResourceKind resourceKindKey="NSXEDGE">
+            <Metric attrkey="System Attributes|total_alert_count" label="" unit="" yellow="" orange="" red=""/>
+        </ResourceKind>
+        <ResourceKind resourceKindKey="NSXEDGEFEATURE">
+            <Metric attrkey="System Attributes|total_alert_count" label="" unit="" yellow="" orange="" red=""/>
+        </ResourceKind>
+        <ResourceKind resourceKindKey="NSXControllerService">
+            <Metric attrkey="System Attributes|total_alert_count" label="" unit="" yellow="" orange="" red=""/>
+        </ResourceKind>
+        <ResourceKind resourceKindKey="NSXManagerService">
+            <Metric attrkey="System Attributes|total_alert_count" label="" unit="" yellow="" orange="" red=""/>
+        </ResourceKind>
+        <ResourceKind resourceKindKey="NSXVPostgresService">
+            <Metric attrkey="System Attributes|total_alert_count" label="" unit="" yellow="" orange="" red=""/>
+        </ResourceKind>
+        <ResourceKind resourceKindKey="NSXRabbitmqService">
+            <Metric attrkey="System Attributes|total_alert_count" label="" unit="" yellow="" orange="" red=""/>
+        </ResourceKind>
+        <ResourceKind resourceKindKey="NSXReplicatorService">
+            <Metric attrkey="System Attributes|total_alert_count" label="" unit="" yellow="" orange="" red=""/>
+        </ResourceKind>
+        <ResourceKind resourceKindKey="SSHService">
+            <Metric attrkey="System Attributes|total_alert_count" label="" unit="" yellow="" orange="" red=""/>
+        </ResourceKind>
+        <ResourceKind resourceKindKey="VRBSERVER">
+            <Metric attrkey="System Attributes|total_alert_count" label="" unit="" yellow="" orange="" red=""/>
+        </ResourceKind>
+        <ResourceKind resourceKindKey="SRMSERVER">
+            <Metric attrkey="System Attributes|total_alert_count" label="" unit="" yellow="" orange="" red=""/>
+        </ResourceKind>
+        <ResourceKind resourceKindKey="VRB">
+            <Metric attrkey="System Attributes|total_alert_count" label="" unit="" yellow="" orange="" red=""/>
+        </ResourceKind>
+        <ResourceKind resourceKindKey="VRBCluster">
+            <Metric attrkey="badge|health" label="" unit="" yellow="" orange="" red=""/>
+            <Metric attrkey="System Attributes|total_alert_count" label="" unit="" yellow="" orange="" red=""/>
+        </ResourceKind>
+        <ResourceKind resourceKindKey="vRBCSyncJob">
+            <Metric attrkey="System Attributes|total_alert_count" label="" unit="" yellow="" orange="" red=""/>
+        </ResourceKind>
+        <ResourceKind resourceKindKey="vRBDcModule">
+            <Metric attrkey="System Attributes|total_alert_count" label="" unit="" yellow="" orange="" red=""/>
+        </ResourceKind>
+        <ResourceKind resourceKindKey="vRBCcModule">
+            <Metric attrkey="System Attributes|total_alert_count" label="" unit="" yellow="" orange="" red=""/>
+        </ResourceKind>
+        <ResourceKind resourceKindKey="vRBAwsModule">
+            <Metric attrkey="System Attributes|total_alert_count" label="" unit="" yellow="" orange="" red=""/>
+        </ResourceKind>
+        <ResourceKind resourceKindKey="vRBVcaModule">
+            <Metric attrkey="System Attributes|total_alert_count" label="" unit="" yellow="" orange="" red=""/>
+        </ResourceKind>
+        <ResourceKind resourceKindKey="vRBAzureModule">
+            <Metric attrkey="System Attributes|total_alert_count" label="" unit="" yellow="" orange="" red=""/>
+        </ResourceKind>
+        <ResourceKind resourceKindKey="vRBVcacModule">
+            <Metric attrkey="System Attributes|total_alert_count" label="" unit="" yellow="" orange="" red=""/>
+        </ResourceKind>
+        <ResourceKind resourceKindKey="vRBVcdModule">
+            <Metric attrkey="System Attributes|total_alert_count" label="" unit="" yellow="" orange="" red=""/>
+        </ResourceKind>
+        <ResourceKind resourceKindKey="vRBStorageModule">
+            <Metric attrkey="System Attributes|total_alert_count" label="" unit="" yellow="" orange="" red=""/>
+        </ResourceKind>
+        <ResourceKind resourceKindKey="SRM">
+            <Metric attrkey="System Attributes|total_alert_count" label="" unit="" yellow="" orange="" red=""/>
+        </ResourceKind>
+        <ResourceKind resourceKindKey="SRMCluster">
+            <Metric attrkey="badge|health" label="" unit="" yellow="" orange="" red=""/>
+            <Metric attrkey="System Attributes|total_alert_count" label="" unit="" yellow="" orange="" red=""/>
+        </ResourceKind>
+        <ResourceKind resourceKindKey="VRA">
+            <Metric attrkey="System Attributes|total_alert_count" label="" unit="" yellow="" orange="" red=""/>
+        </ResourceKind>
+        <ResourceKind resourceKindKey="LogInsight Server">
+            <Metric attrkey="badge|health" label="" unit="" yellow="" orange="" red=""/>
+            <Metric attrkey="System Attributes|total_alert_count" label="" unit="" yellow="" orange="" red=""/>
+        </ResourceKind>
+        <ResourceKind resourceKindKey="vCenterCluster">
+            <Metric attrkey="badge|health" label="" unit="" yellow="" orange="" red=""/>
+            <Metric attrkey="System Attributes|total_alert_count" label="" unit="" yellow="" orange="" red=""/>
+        </ResourceKind>
+        <ResourceKind resourceKindKey="VCENTER">
+            <Metric attrkey="System Attributes|total_alert_count" label="" unit="" yellow="" orange="" red=""/>
+        </ResourceKind>
+        <ResourceKind resourceKindKey="VSAN_VCENTER">
+            <Metric attrkey="System Attributes|total_alert_count" label="" unit="" yellow="" orange="" red=""/>
+        </ResourceKind>
+        <ResourceKind resourceKindKey="vSAN Deployment">
+            <Metric attrkey="badge|health" label="" unit="" yellow="" orange="" red=""/>
+            <Metric attrkey="System Attributes|total_alert_count" label="" unit="" yellow="" orange="" red=""/>
+        </ResourceKind>
+        <ResourceKind resourceKindKey="External PSC">
+            <Metric attrkey="System Attributes|total_alert_count" label="" unit="" yellow="" orange="" red=""/>
+        </ResourceKind>
+        <ResourceKind resourceKindKey="vCenterHealthServices">
+            <Metric attrkey="badge|health" label="" unit="" yellow="" orange="" red=""/>
+            <Metric attrkey="System Attributes|total_alert_count" label="" unit="" yellow="" orange="" red=""/>
+        </ResourceKind>
+        <ResourceKind resourceKindKey="Witness Host">
+            <Metric attrkey="System Attributes|total_alert_count" label="" unit="" yellow="" orange="" red=""/>
+        </ResourceKind>
+        <ResourceKind resourceKindKey="Passive Node">
+            <Metric attrkey="System Attributes|total_alert_count" label="" unit="" yellow="" orange="" red=""/>
+        </ResourceKind>
+        <ResourceKind resourceKindKey="Active Node">
+            <Metric attrkey="System Attributes|total_alert_count" label="" unit="" yellow="" orange="" red=""/>
+        </ResourceKind>
+        <ResourceKind resourceKindKey="SRMHealthServices">
+            <Metric attrkey="System Attributes|total_alert_count" label="" unit="" yellow="" orange="" red=""/>
+        </ResourceKind>
+        <ResourceKind resourceKindKey="vSANHealthServices">
+            <Metric attrkey="System Attributes|total_alert_count" label="" unit="" yellow="" orange="" red=""/>
+        </ResourceKind>
+        <ResourceKind resourceKindKey="vCenterLicense">
+            <Metric attrkey="System Attributes|total_alert_count" label="" unit="" yellow="" orange="" red=""/>
+        </ResourceKind>
+        <ResourceKind resourceKindKey="vCenterLicensing">
+            <Metric attrkey="System Attributes|total_alert_count" label="" unit="" yellow="" orange="" red=""/>
+        </ResourceKind>
+        <ResourceKind resourceKindKey="NSXControllers">
+            <Metric attrkey="System Attributes|total_alert_count" label="" unit="" yellow="" orange="" red=""/>
+        </ResourceKind>
+        <ResourceKind resourceKindKey="NSXEdges">
+            <Metric attrkey="System Attributes|total_alert_count" label="" unit="" yellow="" orange="" red=""/>
+        </ResourceKind>
+    </AdapterKind>
+</AdapterKinds>

@@ -14,9 +14,6 @@
     and a rollup type (one of SUM, AVG, MIN, MAX, NONE, LATEST, or COUNT). These parameters are passed directly
     to the API.
 
-    **NOTE:** Although multiple object types are theoretically supported, in our testing only VirtualMachine
-    objects have been validated. HostSystem types (or others) may not return data.
-
 .PARAMETER vROPSUser
     The username for vROps API authentication.
 
@@ -100,6 +97,14 @@ param(
     [string]$OutputDirectory = "."
 )
 
+#region Read CSV Files
+# Objects CSV: expected columns: ObjectName, ResourceKind
+$objectList = Import-Csv -Path $ObjectCsv -Header "ObjectName", "ResourceKind"
+
+# Metrics CSV: first column is ResourceKind; subsequent columns are statKeys.
+$metricsMapping = Import-Csv -Path $MetricsCsv
+#endregion
+
 #region Define Endpoints
 $vropsResourcesEndpoint = "https://$vROPSFQDN/suite-api/api/resources"
 $vropsStatisticsEndpoint = "https://$vROPSFQDN/suite-api/api/resources/stats"
@@ -128,7 +133,18 @@ $secHeaders.Add("X-vRealizeOps-API-use-unsupported", "true")
 
 Write-Output "Retrieving vROPS resource inventory..."
 try {
-    $allResourcesResponse = Invoke-RestMethod -Uri $vropsResourcesEndpoint -Method Get -Headers $secHeaders
+    # vrops defaults to a page size of 1000 - which is a problem in a large environment
+    #to work around that we are going to set a really big page size and only retrieve objects that someone has told us to get metrics for
+    $resourceKindList = @()
+    foreach ($metricMap in $metricsMapping)
+    {
+        $resourceKindList += $metricMap.ResourceKind
+    }
+    $resourceKindQuery = ($resourceKindList | ForEach-Object { "resourceKind=$($_)" }) -join "&"
+    $url = $vropsResourcesEndpoint + "?pageSize=100000"
+    $url = $url + "&$resourceKindQuery"
+    $url += "&_no_links=true"
+    $allResourcesResponse = Invoke-RestMethod -Uri $url -Method Get -Headers $secHeaders
 }
 catch {
     Write-Error "Failed to retrieve resources from vROPS: $_"
@@ -152,13 +168,6 @@ foreach ($resource in $allResources) {
 }
 Write-Output "Found $($resourceMapping.Count) resources in vROPS inventory."
 
-#region Read CSV Files
-# Objects CSV: expected columns: ObjectName, ResourceKind
-$objectList = Import-Csv -Path $ObjectCsv -Header "ObjectName", "ResourceKind"
-
-# Metrics CSV: first column is ResourceKind; subsequent columns are statKeys.
-$metricsMapping = Import-Csv -Path $MetricsCsv
-#endregion
 
 # Force Rollup parameters to upper case as expected by the API.
 $RollupInterval = $RollupInterval.ToUpper()
@@ -176,13 +185,13 @@ foreach ($mapping in $metricsMapping) {
         continue
     }
 
-    # Build an array of statKeys (all columns except ResourceKind).
+    # Build an array of statKeys (all columns except ResourceKind)
     $statKeys = $mapping.PSObject.Properties |
                 Where-Object { $_.Name -ne "ResourceKind" } |
                 ForEach-Object { $_.Value } |
                 Where-Object { $_ -and $_.Trim().Length -gt 0 }
 
-    # Build an array of requested resources (FriendlyName and ResourceId).
+    # Build an array of requested resources (FriendlyName and ResourceId)
     $requestedResources = @()
     foreach ($obj in $objects) {
         $friendlyName = $obj.ObjectName

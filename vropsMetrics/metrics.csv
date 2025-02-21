@@ -1,0 +1,2 @@
+ResourceKind,metric1,metric2,metric3,metric4,metric5
+VirtualMachine,cpu|usage_average,mem|workload,storage|totalReadLatency_average,diskspace:151|perDsUsed,cpu|costopPct,cpu|iowaitPct

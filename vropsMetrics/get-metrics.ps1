@@ -207,7 +207,7 @@ foreach ($mapping in $metricsMapping) {
     $resourceIdsQuery = ($requestedResources | ForEach-Object { "resourceId=$($_.ResourceId)" }) -join "&"
     $startMs = [long](($StartTime.ToUniversalTime() - (Get-Date '1970-01-01T00:00:00Z')).TotalMilliseconds)
     $endMs   = [long](($EndTime.ToUniversalTime()   - (Get-Date '1970-01-01T00:00:00Z')).TotalMilliseconds)
-    $url = "$vropsStatisticsEndpoint?begin=$startMs&end=$endMs"
+    $url = $vropsStatisticsEndpoint + "?begin=$startMs&end=$endMs"
     $url += "&intervalType=$RollupInterval"
     $url += "&rollUpType=$rollupTypeUpper"
     $url += "&$resourceIdsQuery"

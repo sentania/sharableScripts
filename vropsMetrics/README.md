@@ -1,8 +1,8 @@
-# vROps Batched Metrics Extraction Script
+# Aria Operations Batched Metrics Extraction Script
 
 ## Overview
 
-This PowerShell script authenticates to a vRealize Operations (vROps) instance, retrieves the full resource inventory,
+This PowerShell script authenticates to a Aria Operations (vRAria Ops) instance, retrieves the full resource inventory,
 and then performs a batched GET call to query metric statistics for a set of objects. The script accepts two CSV files:
 - **Objects CSV:** Contains objects with columns `ObjectName` and `ResourceKind`.
 - **Metrics CSV:** Contains metric definitions for each resource kind. The first column must be `ResourceKind`, and
@@ -10,9 +10,9 @@ and then performs a batched GET call to query metric statistics for a set of obj
 
 ## Parameters
 
-- **vROPSUser**: Username for vROps authentication.
-- **vROPSpasswd**: Password for vROps authentication.
-- **vROPSFQDN**: Fully qualified domain name or IP address of the vROps instance.
+- **vROPSUser**: Username for Aria Ops authentication.
+- **vROPSpasswd**: Password for Aria Ops authentication.
+- **vROPSFQDN**: Fully qualified domain name or IP address of the Aria Ops instance.
 - **StartTime**: Start time (DateTime) for the query.
 - **EndTime**: End time (DateTime) for the query.
 - **RollupInterval**: The rollup interval to use.  

@@ -1,4 +1,6 @@
 objectname,ResourceKind
 vran-xjhsd,VirtualMachine
 operations,VirtualMachine
+vcf-lab-site1-esx12.int.sentania.net,HostSystem
+vcf-lab-site1-esx11.int.sentania.net,HostSystem
 

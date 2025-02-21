@@ -6,7 +6,7 @@ This PowerShell script authenticates to a vRealize Operations (vROps) instance, 
 and then performs a batched GET call to query metric statistics for a set of objects. The script accepts two CSV files:
 - **Objects CSV:** Contains objects with columns `ObjectName` and `ResourceKind`.
 - **Metrics CSV:** Contains metric definitions for each resource kind. The first column must be `ResourceKind`, and
-  subsequent columns list the `statKey` values (e.g. `cpu|usage_average`, `mem|workload`) to query.
+  subsequent columns list the `statKey` values (e.g. `cpu|usage_average`, `mem|workload`) to query.  Additional column headers are allowed, but not required.
 
 ## Parameters
 

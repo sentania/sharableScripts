@@ -50,12 +50,16 @@
 .PARAMETER OutputDirectory
     The directory where the output CSV files will be saved (defaults to the current directory).
 
+.PARAMETER ignoreSSL
+    If this is set to true, it will ignore SSL validation.  Default is $FALSE
+
 .EXAMPLE
     .\Get-vROpsMetrics.ps1 -vROPSUser admin -vROPSpasswd P@ssw0rd -vROPSFQDN operations.example.com `
         -StartTime "2025-02-20T00:00:00" -EndTime "2025-02-20T23:59:59" `
         -RollupInterval MINUTES -RollupType AVG `
         -ObjectCsv "C:\Inputs\objects.csv" -MetricsCsv "C:\Inputs\metrics.csv" `
-        -OutputDirectory "C:\Outputs"
+        -OutputDirectory "C:\Outputs" `
+        -ignoreSSL $false
 
 .NOTES
     Only VirtualMachine object types have been validated in testing. Other object types (e.g., HostSystem)
@@ -94,8 +98,15 @@ param(
     [string]$MetricsCsv,
 
     [Parameter(Mandatory = $false)]
+    [bool]$ignoreSSL = $false,
+
+    [Parameter(Mandatory = $false)]
     [string]$OutputDirectory = "."
 )
+if ($ignoreSSL = $true)
+{
+    [System.Net.ServicePointManager]::ServerCertificateValidationCallback = { $true }
+}
 
 #region Read CSV Files
 # Objects CSV: expected columns: ObjectName, ResourceKind

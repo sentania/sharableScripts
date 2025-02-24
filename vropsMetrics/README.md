@@ -24,12 +24,14 @@ and then performs a batched GET call to query metric statistics for a set of obj
 - **ObjectCsv**: Path to the CSV file containing the objects.
 - **MetricsCsv**: Path to the CSV file defining statKeys per resource kind.
 - **OutputDirectory**: (Optional) Directory for output CSV files (defaults to the current directory).
+- **ignoreSSL**: (Optional) Should the script validate the SSL certifcate (default is $FALSE)
 
 ## Usage Example
 
 ```powershell
-.\Get-vROpsMetrics.ps1 -vROPSUser admin -vROPSpasswd P@ssw0rd -vROPSFQDN operations.example.com `
+.\Get-vROPsMetrics.ps1 -vROPSUser admin -vROPSpasswd P@ssw0rd -vROPSFQDN operations.example.com `
     -StartTime "2025-02-20T00:00:00" -EndTime "2025-02-20T23:59:59" `
     -RollupInterval MINUTES -RollupType AVG `
     -ObjectCsv "C:\Inputs\objects.csv" -MetricsCsv "C:\Inputs\metrics.csv" `
-    -OutputDirectory "C:\Outputs"
+    -OutputDirectory "C:\Outputs" `
+    -ignoreSSL $FALSE

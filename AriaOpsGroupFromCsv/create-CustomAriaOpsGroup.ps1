@@ -28,9 +28,10 @@ Specifies the path to the CSV file containing group membership information. The 
 .\create-CustomAriaOpsGroup.ps1 -vROPSUser "admin" -vROPSpasswd "password" -vROPSFQDN "vrops.example.com" -groupInputListCsv "C:\Data\groups.csv" -groupMembershipInputListCsv "C:\Data\groupMembership.csv" -ignoreSSL $true
 
 .NOTES
-Author: Your Name  
-Date: YYYY-MM-DD  
+Author: Scott Bowe 
+Date: 2025-03-05  
 Version: 1.0
+Contact: scott.bowe@broadcom.com / scottb@sentania.net
 #>
 param(
     [Parameter(Mandatory = $true)]

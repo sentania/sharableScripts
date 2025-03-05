@@ -2,7 +2,7 @@
 
 ## Overview
 
-This PowerShell script authenticates to a Aria Operations (vRAria Ops) instance, retrieves the full resource inventory,
+This PowerShell script authenticates to a Aria Operations (Aria Ops) instance, retrieves the full resource inventory,
 and then performs a batched GET call to query metric statistics for a set of objects. The script accepts two CSV files:
 - **Objects CSV:** Contains objects with columns `ObjectName` and `ResourceKind`.
 - **Metrics CSV:** Contains metric definitions for each resource kind. The first column must be `ResourceKind`, and

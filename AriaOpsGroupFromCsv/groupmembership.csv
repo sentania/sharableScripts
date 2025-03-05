@@ -1,0 +1,6 @@
+objectname,resourcekind,groupname
+operations,VirtualMachine,Lab Group 1
+automation,VirtualMachine,Lab Group 2
+dcint1,VirtualMachine,Lab Group 3
+vcf-lab-site1-esx12.int.sentania.net,HostSystem,CustomGroup1
+vcf-lab-site1-esx11.int.sentania.net,HostSystem,CustomGroup1

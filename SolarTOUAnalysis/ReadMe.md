@@ -10,7 +10,6 @@ This PowerShell script estimates and compares home energy costs under different 
 - Applies **different buyback rates for summer vs. non-summer**
 - Recognizes **WE Energies off-peak holidays** (e.g., Memorial Day, Thanksgiving)
 - Outputs **monthly summaries** and **exportable CSV** reports
-- Rounds all monetary values to **two decimal places**
 
 ---
 
@@ -82,5 +81,4 @@ Planned features for future versions:
 
 ## 🧠 Author
 
-**Scott Bowe**  
-Greendale, WI
+**Scott Bowe** 

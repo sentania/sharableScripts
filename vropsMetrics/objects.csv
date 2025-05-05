@@ -1,6 +1,20 @@
 objectname,ResourceKind
-vran-xjhsd,VirtualMachine
-operations,VirtualMachine
-vcf-lab-site1-esx12.int.sentania.net,HostSystem
-vcf-lab-site1-esx11.int.sentania.net,HostSystem
+esx1.int.sentania.net,HostSystem
+vcf-lab-site1-esx16,VirtualMachine
+vcf-lab-site1-esx15,VirtualMachine
+vcf-lab-site1-esx14,VirtualMachine
+vcf-lab-site1-esx13,VirtualMachine
+vcf-lab-site1-esx12,VirtualMachine
+vcf-lab-site1-esx11,VirtualMachine
+vcf-lab-site1-esx10,VirtualMachine
+vcf-lab-site1-esx09,VirtualMachine
+vcf-lab-site1-esx08,VirtualMachine
+vcf-lab-site1-esx07,VirtualMachine
+vcf-lab-site1-esx06,VirtualMachine
+vcf-lab-site1-esx05,VirtualMachine
+vcf-lab-site1-esx04,VirtualMachine
+vcf-lab-site1-esx03,VirtualMachine
+vcf-lab-site1-esx02,VirtualMachine
+vcf-lab-site1-esx01,VirtualMachine
+vyos1,VirtualMachine
 

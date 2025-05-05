@@ -63,7 +63,7 @@ Each row represents a month.
 2. Open PowerShell and run:
 
 ```powershell
-.\energy-cost-model.ps1
+.\powerAnalysis.ps1
 ```
 
 3. Review the `output.csv` file for your month-by-month cost analysis.

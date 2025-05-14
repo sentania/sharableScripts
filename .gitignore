@@ -2,3 +2,4 @@ virtualmachine_metrics.csv
 *_metrics.csv
 output*.csv
 *.old.csv
+*.xlsx

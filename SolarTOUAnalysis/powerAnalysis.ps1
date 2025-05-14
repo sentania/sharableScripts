@@ -38,7 +38,6 @@ $inputFile = "enphase-data.csv"
 
 # ToU Peak Hour Start
 $primePeakHourstart = 7                        # Edit to simulate different ToU peak windows, 7, 8 and 9 are current options for WE Energies
-$loadShift = 400                              # Kwh to load shift from off-peak to peak, to reduce peak sell back.
 
 # Adjust the following if you don't have an EV
 $evCreditLimit = 400                        # kwH limit of EV Credit, set to 0 if this does not apply
@@ -94,7 +93,7 @@ while ($i -lt 3 )
         $temp = "" | select month, grossConsumption, peakConsumption, offPeakConsumption, `
                             grossProduction, peakProduction, offPeakProduction, stdNoSolarEnergyCost ,touNoSolarCost, `
                             stdSolarElectricCost, touSolarElectricCost, touSolarLoadShiftElectricCost, staticServiceCost, stdEVSavings, touEVSavings, stdNoSolarTotal, `
-                            touNoSolarTotal, stdSolarTotal, touSolarTotal, touSolarLoadShiftTotal
+                            touNoSolarTotal, stdSolarTotal, touSolarTotal
         $temp.month = $month.name
         $temp.staticServiceCost = $lowEnergyAssistanceFee
         $currentYear = $month.Name.split(',')[0]
@@ -175,31 +174,6 @@ while ($i -lt 3 )
         $temp.touSolarElectricCost = [math]::Round(($touOffPeakCost + $touPeakCost),2)
         $temp.touNoSolarCost = [math]::Round((($temp.peakConsumption * $onPeakKwh) + ($temp.offPeakConsumption * $offPeakKwh)),2)
 
-        #Determine TOU net metering cost of electrical consumption with load shift
-        $touLoadShiftPeakNetConsumption = ($temp.peakConsumption + $loadShift) - $temp.peakProduction
-        $touLoadShiftOffPeakNetConsumption = ($temp.offPeakConsumption - $loadShift)- $temp.offPeakProduction
-        
-
-        if ($touLoadShiftPeakNetConsumption -gt 0)
-        {
-            $touLoadShiftPeakCost = $touLoadShiftPeakNetConsumption * ($onPeakKwh + $environmentControlCharge)
-        }
-        else
-        {
-            $touLoadShiftPeakCost = $touLoadShiftPeakNetConsumption * $peakBuyBack
-        }
-
-        if ($touLoadShiftOffPeakNetConsumption -gt 0)
-        {
-            $touLoadShiftOffPeakCost = $touLoadShiftOffPeakNetConsumption * ($offPeakKwh + $environmentControlCharge)
-        }
-        else
-        {
-            $touLoadShiftOffPeakCost = $touLoadShiftOffPeakNetConsumption * $offPeakBuyBack
-        }
-
-        $temp.touSolarLoadShiftElectricCost = [math]::Round(($touLoadShiftOffPeakCost + $touLoadShiftPeakCost),2)
-
         #Apply EV Credit 
         if ($monthEVConsumption -gt $evCreditLimit)
         {
@@ -215,7 +189,6 @@ while ($i -lt 3 )
         $temp.touNoSolarTotal = [math]::Round(($temp.staticServiceCost + $temp.touNoSolarCost - $temp.touEVSavings),2)
         $temp.stdSolarTotal = [math]::Round(($temp.staticServiceCost + $temp.stdSolarElectricCost - $temp.stdEVSavings),2)
         $temp.touSolarTotal = [math]::Round(($temp.staticServiceCost + $temp.touSolarElectricCost - $temp.touEVSavings),2)
-        $temp.touSolarLoadShiftTotal = [math]::Round(($temp.staticServiceCost + $temp.touSolarLoadShiftElectricCost - $temp.touEVSavings),2)
         $summaryData += $temp
     }
 

@@ -13,6 +13,8 @@
 - Network connectivity from the machine running this script to the vCenter and ESXi hosts
 - Proper credentials for vCenter and ESXi hosts
 
+The script was tested and developed an Ubuntu 22 operating system, but as long as all necessary pre-requisites are installed it should work as expected.
+
 ## Installation
 
 1. Install PowerCLI (if not already installed):
@@ -44,7 +46,7 @@ $params     = '-hp True -ke False'
 
 ## Parameters
 
-- \`\`\
+- \`vcenterServer\`\
   FQDN or IP address of your vCenter Server.
 
 - \`\`\

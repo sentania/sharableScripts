@@ -46,31 +46,31 @@ $params     = '-hp True -ke False'
 
 ## Parameters
 
-- \`vcenterServer\`\
+- **vcenterServer**
   FQDN or IP address of your vCenter Server.
 
-- \`\`\
+- **scriptPath**
   Local path to the Python script to be executed on ESXi hosts.
 
-- \`\` *(optional)*\
+- **remotePath *(optional)***\
   Destination path on ESXi hosts. Default: `/tmp/script.py`.
 
-- \`\` *(optional)*\
+- **params *(optional)***\
   Additional parameters to pass to the Python script.
 
-- \`\`\
+- **vcUser**
   Username for connecting to vCenter.
 
-- \`\`\
+- **vcPass**
   Password for the vCenter user (plaintext; converted internally to a secure string).
 
-- \`\` *(optional)*\
+- **esxiUser *(optional)***\
   Username for SSH on ESXi hosts. Default: `root`.
 
-- \`\`\
-  Password for SSH on ESXi hosts.
+- **esxiPass**
+  Password for SSH on ESXi hosts. (Plaintext)
 
-- \`\` *(switch)*\
+- **ignoreSSL *(switch)***\
   Ignore invalid SSL certificates when connecting to vCenter.
 
 ## How It Works
@@ -83,6 +83,7 @@ $params     = '-hp True -ke False'
    - Executes the script via `ssh`, capturing and propagating the Python process’s exit code.
    - Stops the SSH service.
    - Records Success/Failure status and any error messages.
+   - As of this version, the script utilzies a common root password for all ESX hosts
 4. **Summary**: After processing all hosts, disconnects from vCenter, resets SSL behavior (if altered), and outputs a summary table of each host’s execution status.
 
 ## Example Output

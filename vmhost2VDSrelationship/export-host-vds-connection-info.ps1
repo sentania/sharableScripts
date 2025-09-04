@@ -21,7 +21,7 @@ foreach ($vmHost in $vmhosts)
                 #get this network adapter
                 $thisNetworkAdapter = $vmHostNetworkAdapters | where {$_.Name -eq $connectedUplink.connectedentity}
                 
-                $tempcollection = "" | select VMhost, VMNIC, Driver, DriverVersion, FirmwareVersion, MacAddress, LinkStatus, speed, uplinkName
+                $tempcollection = "" | select VMhost, VMNIC, Driver, DriverVersion, FirmwareVersion, MacAddress, LinkStatus, speed, vSwitchName, uplinkName
                 $tempcollection.VMhost = $vmhost.Name
                 $tempcollection.VMNIC = $connectedUplink.connectedentity
                 $tempcollection.uplinkName = $connectedUplink.name
@@ -31,6 +31,7 @@ foreach ($vmHost in $vmhosts)
                 $tempcollection.driver = $thisNetworkAdapter.ExtensionData.Driver
                 $tempcollection.DriverVersion = $thisNetworkAdapter.ExtensionData.DriverVersion
                 $tempcollection.FirmwareVersion = $thisNetworkAdapter.ExtensionData.FirmwareVersion
+                $tempcollection.vSwitchName = $vswitch.name
                 $results += $tempcollection
 
         }

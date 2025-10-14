@@ -1,0 +1,146 @@
+layout:
+  pages:
+    - id: page_general
+      sections:
+        - id: section_project
+          fields:
+            - id: project
+              display: combobox
+              signpostPosition: right-middle
+        - id: section_deploymentName
+          fields:
+            - id: deploymentName
+              display: textField
+              state:
+                visible: true
+                read-only: false
+              signpostPosition: right-middle
+      title: General
+    - id: page_ffbf406b
+      sections:
+        - id: section_3f831abf
+          fields:
+            - id: dropDown_c9b658c5
+              display: dropDown
+              state:
+                visible: true
+                read-only: false
+              signpostPosition: right-middle
+        - id: section_37e9b399
+          fields:
+            - id: dropDown_ac644e1a
+              display: dropDown
+              state:
+                read-only: false
+                visible:
+                  - notEmpty:
+                      dropDown_c9b658c5: ''
+                    value: true
+              signpostPosition: right-middle
+        - id: section_db3b0b37
+          fields:
+            - id: dropDown_dbe77b48
+              display: dropDown
+              state:
+                read-only: false
+                visible:
+                  - notEmpty:
+                      dropDown_ac644e1a: ''
+                    value: true
+              signpostPosition: right-middle
+        - id: section_dc7f4f7b
+          fields:
+            - id: dropDown_75595425
+              display: dropDown
+              state:
+                read-only: false
+                visible:
+                  - notEmpty:
+                      dropDown_dbe77b48: ''
+                    value: true
+              signpostPosition: right-middle
+      title: VPC Demo
+      state:
+        visible: true
+schema:
+  project:
+    label: Project
+    type:
+      dataType: string
+      isMultiple: false
+    valueList:
+      id: projects
+      type: scriptAction
+    constraints:
+      required: true
+  deploymentName:
+    label: Deployment Name
+    type:
+      dataType: string
+      isMultiple: false
+    constraints:
+      required: true
+      max-value: 900
+  dropDown_c9b658c5:
+    label: Select a VPC Size
+    type:
+      dataType: string
+    default: Please select a valid subnet
+    valueList:
+      id: net.sentania.lab/populateVPCSize
+      type: scriptAction
+      parameters: []
+    placeholder: ''
+    constraints: {}
+  dropDown_ac644e1a:
+    label: Select VPC Subnet Size
+    type:
+      dataType: string
+    valueList:
+      id: net.sentania.lab/getVPCSubnetSize
+      type: scriptAction
+      parameters: []
+    placeholder: ''
+    constraints: {}
+  dropDown_dbe77b48:
+    label: publicSubnetCount
+    type:
+      dataType: integer
+    placeholder: ''
+    constraints: {}
+    valueList:
+      type: scriptAction
+      id: net.sentania.lab/calculateVPCPublicSubnetCount
+      parameters:
+        - vpcsize: dropDown_c9b658c5
+          $type:
+            dataType: string
+            isMultiple: false
+        - subnetsize: dropDown_ac644e1a
+          $type:
+            dataType: string
+            isMultiple: false
+  dropDown_75595425:
+    label: privateSubnetCount
+    placeholder: ''
+    type:
+      dataType: integer
+    constraints: {}
+    valueList:
+      type: scriptAction
+      id: net.sentania.lab/calculateVPCPrivateSubnetCount
+      parameters:
+        - publicSubnetCount: dropDown_dbe77b48
+          $type:
+            dataType: decimal
+            isMultiple: false
+        - vpcsize: dropDown_c9b658c5
+          $type:
+            dataType: string
+            isMultiple: false
+        - subnetsize: dropDown_ac644e1a
+          $type:
+            dataType: string
+            isMultiple: false
+options:
+  externalValidations: []

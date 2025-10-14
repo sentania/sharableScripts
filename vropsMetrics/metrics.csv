@@ -1,3 +1,2 @@
 ResourceKind,metric1,metric2,metric3,metric4,metric5,metric6,metric7,metric8,metric9
 HostSystem,cpu|mhz_per_core,power|energy_summation_sum
-VirtualMachine,cpu|usage_average,mem|workload,storage|totalReadLatency_average,cpu|costopPct,cpu|iowaitPct,power|energy_summation_sum

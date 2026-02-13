@@ -29,6 +29,9 @@
 .PARAMETER ignoreSSL
  Switch to ignore invalid SSL certificates when connecting to vCenter. Default: $false
 
+ .PARAMETER VMHostFilter
+ (Optional) Pass in a string to filter the hosts selected for execution. 
+
 .EXAMPLE
  .\Run-OnEsx.ps1 `
    -vcenterServer vc.example.com `
@@ -38,6 +41,7 @@
    -esxiPass 'ESXiP@ss!' `
    -scriptParams '-arg1 value1 -arg2 value2' `
    -ignoreSSL
+   -VMHostFilter "*prod*esx*"
 #>
 
 param(
@@ -54,7 +58,8 @@ param(
     [string]$esxiUser   = "root",
     [Parameter(Mandatory)]
     [string]$esxiPass,
-    [boolean]$ignoreSSL = $false
+    [boolean]$ignoreSSL = $false,
+    [string]$VMHostFilter = "*"
 )
 
 function Abort([string]$msg) {
@@ -115,7 +120,7 @@ Connect-VIServer -Server $vcenterServer -Credential $vcenterCred | Out-Null
 $results = @()
 
 # Get all connected ESXi hosts
-$vmhosts = Get-VMHost | Where-Object { $_.ConnectionState -eq "Connected" }
+$vmhosts = Get-VMHost -name $VMHostFilter | Where-Object { $_.ConnectionState -eq "Connected" }
 
 foreach ($vmhost in $vmhosts) {
     $record = [PSCustomObject]@{

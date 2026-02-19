@@ -33,7 +33,7 @@ $scriptPath   = 'C:\path\to\your_script.py'
 $params       = '-hp True -ke False'
 $VMHostFilter = "*prod*esx*"
 
-.\Run-OnEsx.ps1 `
+.\runonESX.ps1 `
     -vcenterServer vc.example.com `
     -scriptPath $scriptPath `
     -scriptParams $params `

@@ -58,7 +58,7 @@ param(
     [string]$esxiUser   = "root",
     [Parameter(Mandatory)]
     [string]$esxiPass,
-    [boolean]$ignoreSSL = $false,
+    [switch]$ignoreSSL = $false,
     [string]$VMHostFilter = "*"
 )
 

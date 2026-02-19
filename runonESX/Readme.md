@@ -26,11 +26,12 @@ The script was tested and developed an Ubuntu 22 operating system, but as long a
 ## Usage
 
 ```powershell
-$vcUser     = 'administrator@vsphere.local'
-$vcPass     = 'YourVcPassword'
-$esxiPass   = 'YourEsxiPassword'
-$scriptPath = 'C:\path\to\your_script.py'
-$params     = '-hp True -ke False'
+$vcUser       = 'administrator@vsphere.local'
+$vcPass       = 'YourVcPassword'
+$esxiPass     = 'YourEsxiPassword'
+$scriptPath   = 'C:\path\to\your_script.py'
+$params       = '-hp True -ke False'
+$VMHostFilter = "*prod*esx*"
 
 .\Run-OnEsx.ps1 `
     -vcenterServer vc.example.com `
@@ -42,6 +43,7 @@ $params     = '-hp True -ke False'
     [-remotePath '/tmp/your_script.py'] `
     [-esxiUser root] `
     [-ignoreSSL]
+    [-VMHostFilter $VMHostFilter]
 ```
 
 ## Parameters
@@ -72,6 +74,9 @@ $params     = '-hp True -ke False'
 
 - **ignoreSSL *(switch)***\
   Ignore invalid SSL certificates when connecting to vCenter.
+
+- **VMHostFIlter *(optional)***\
+   Pass in a string to filter the hosts selected for execution. Defaults to *.
 
 ## How It Works
 
